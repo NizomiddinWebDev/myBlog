@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Registratsiya
+{% endblock title %}
+
+
+{% block content %}
+<div class="container mt-5 pt-3">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-10 offset-1 mt-3">
+                        <h2>Ro'yhatdan o'tish</h2>
+                        <form action="" method="post">{% csrf_token %}
+                            {{form|crispy}}
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-outline-success" type="submit">Ro'yhatdan o'tish</button>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

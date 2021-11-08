@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Delete Article
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="container article_del">
+        <div class="row">
+            <div class="col-md-6 offset-3 mt-5">
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <form action="" method="post">{% csrf_token %}
+                                <h3>Haqiqattan {{object}} o'chirilsinmi?</h3>
+                                <button class="btn btn-danger mt-5">delete</button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+login
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5 login_contener">
+    <div class="row">
+        <div class="col-md-4 offset-4 mt-5 mb-5">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-10 offset-1 mt-3">
+                        <h4>Kirish</h4>
+                        <hr>
+                        <form action="" method="post">{% csrf_token %}
+                            {{form|crispy}}
+                            <div class="d-grid gap-2 mt-4">
+                                <button class="btn btn btn btn-outline-success" type="submit">Login</button>
+                            </div>
+                            <p class="my-2"><a href="{% url 'password_reset' %}">Parolni unutdingizmi?</a></p>
+                            <hr class="mb-4">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

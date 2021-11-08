@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Postlar
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-3">
+            {% for article in object_list %}
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h5>{{article.title}}</h3>
+                </div>
+                <div class="card-body">
+                    {% if article.photo %}
+                    <img class="card-img-top" src="{{article.photo.url}}" alt="">
+                    {% endif %}
+                    {{article.summary}}
+                    <a href="{% url 'article_detail' article.pk %}">Batafsil..</a>
+                </div>
+                <div class="card-footer">
+                    Muallif: {{article.author}} | Data : {{article.date}}
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

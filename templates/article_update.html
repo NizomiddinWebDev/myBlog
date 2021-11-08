@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Update Article
+{% endblock title %}
+    
+
+{% block content %}
+    <div class="container mt-5 mb-4">
+        <div class="row">
+            <div class="col-md-8 offset-2 mt-5">
+                <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    {{form.media}}
+                    {{form|crispy}}
+                    <button class="btn btn-light mb-5 mt-5">Change</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    
